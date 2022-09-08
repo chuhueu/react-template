@@ -55,6 +55,11 @@ export const getDesignTokens = (mode?: PaletteMode): any => ({
       fontWeight: 600,
       lineHeight: "40px"
     },
+    h4: {
+      color: "#091156",
+      fontWeight: 600,
+      fontSize: "18px"
+    },
     subtitle1: {
       color: "#091156",
       fontSize: "16px",
@@ -68,6 +73,13 @@ export const getDesignTokens = (mode?: PaletteMode): any => ({
     },
     button: {
       textTransform: 'none'
+    },
+    inherit: {
+      color: "#8B8B8B",
+      fontSize: "14px",
+      fontWeight: 400,
+      letterSpacing: "1px",
+      textAlign: "center",
     }
   }
 });

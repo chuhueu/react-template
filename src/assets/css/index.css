@@ -2,3 +2,11 @@ body {
   margin: 0 !important;
   font-family: "Poppins",sans-serif !important;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
