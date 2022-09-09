@@ -6,27 +6,27 @@ import "./vision.css";
 import Illustration from "assets/images/about/Illustration.png";
 import Illustration2 from "assets/images/about/Illustration2.png";
 
-// const useStyles = makeStyles((theme: any) => ({
-//   responseServiceItem: {
-//     [theme.breakpoints.down("sm")]: {
-//       display: "flex",
-//     },
-//   },
-// }));
+const useStyles = makeStyles((theme: any) => ({
+  responseServiceItem: {
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+    },
+  },
+}));
 const Vision = () => {
-  // const classes = useStyles();
+  const classes = useStyles();
   return (
     <>
       <Grid component="section" mt={30}>
         <Grid className="landing-page" gap={24} container>
           <Grid
             item
-            className="section-vision-img"
+            // className="section-vision-img"
             xs={12}
             lg={5}
             md={12}
             sm={12}
-            // className={`section-vision-img${classes.responseServiceItem}`}
+            className={`section-vision-img${classes.responseServiceItem}`}
           >
             <img src={Illustration} alt="treatment" />
           </Grid>
