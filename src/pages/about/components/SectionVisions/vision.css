@@ -12,6 +12,7 @@
 .background-image-vision {
   position: absolute;
   width: 100%;
+  padding: 10px;
   left: 0;
   z-index: -1;
 }
