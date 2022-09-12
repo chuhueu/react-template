@@ -1,0 +1,7 @@
+
+.background-image-about {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  background-image: url(https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/BG-3.png);
+}

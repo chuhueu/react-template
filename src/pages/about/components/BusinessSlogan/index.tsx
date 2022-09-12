@@ -1,1 +1,1 @@
-export { default as Slogan } from "./Slogan";
+export { default as Slogan } from "./slogan";
