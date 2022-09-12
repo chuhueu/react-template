@@ -13,12 +13,12 @@ const Slogan = () => {
         marginBottom={"112px"}
         height={"529px"}
       >
-        <img
+        {/* <img
           src={BackgroundMask}
           alt="background"
           className="background-mask"
-        />
-        <Box className="background-mask"></Box>
+        /> */}
+        {/* <Box className="background-mask"></Box> */}
         <Box className="slogan">
           <Typography
             variant="subtitle2"

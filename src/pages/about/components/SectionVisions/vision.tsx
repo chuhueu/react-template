@@ -7,7 +7,7 @@ import "./vision.css";
 import BG4a from "assets/images/about/BG4a.png";
 import Illustration from "assets/images/about/Illustration.png";
 import Illustration2 from "assets/images/about/Illustration2.png";
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   customLink: {
     backgroundColor: "red",
     // [theme.breakpoints.down("sm")]: {
@@ -15,13 +15,6 @@ const useStyles = makeStyles((theme: any) => ({
     // },
   },
 }));
-// const useStyles = makeStyles((theme: any) => ({
-//   customLink: {
-//     [theme.breakpoints.down("sm")]: {
-//       backgroundColor: "red",
-//     },
-//   },
-// }));
 
 function Vision() {
   const classes = useStyles();
