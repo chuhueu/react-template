@@ -4,5 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.tslint": true
   },
-  "eslint.enable": true
+  "eslint.enable": true,
+  "git.untrackedChanges": "mixed"
 }
