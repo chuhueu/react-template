@@ -1,6 +1,7 @@
-
+.service-section {
+    width: 100%;
+}
 .service-item {
-    width: 50vh;
     height: 443px;
     background-color: #ffffff;
     padding: 59px 40px 85px 40px;

@@ -12,14 +12,13 @@ const useStyles = makeStyles((theme: any) => ({
             width: '100% !important',
         },
     },
-
 }));
 
 function ServicePage() {
     const classes = useStyles();
 
     return (
-        <Box component="section" mb={20}>
+        <Box component="section">
             <Box>
                 <Typography variant="subtitle2" mb={2} textAlign="center">
                     Main Services
@@ -27,7 +26,7 @@ function ServicePage() {
                 <Typography variant="h3" mb={2} textAlign="center">
                     Learn services to focus <br /> on your beauty
                 </Typography>
-                <Box component="p" textAlign="center">
+                <Box textAlign="center">
                     Porta rhoncus orci condimentum vitae lobortis eu dignissim non massa. Non parturient amet, <br />
                     feugiat tellus sagittis, scelerisque eget nulla turpis.
                 </Box>
@@ -35,13 +34,13 @@ function ServicePage() {
 
             <Grid
                 container
-                spacing={2}
+                spacing={4}
                 pt={11.5}
                 alignItems="center"
                 justifyContent="center"
                 className="service-section"
             >
-                <Grid item xs={0} sm={4} lg={4} md={6} className="service-container">
+                <Grid item xs={0} sm={12} lg={4} md={6} className="service-container">
                     <Box className={`service-item ${classes.responseServiceItem}`}>
                         <Box className="service-img" textAlign="center">
                             <img src={animation1} alt="Animation1" />
@@ -52,7 +51,7 @@ function ServicePage() {
                                 {' '}
                                 Beauty consultation
                             </Typography>
-                            <Typography variant="inherit">
+                            <Typography variant="inherit" textAlign="center">
                                 {' '}
                                 Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis{' '}
                             </Typography>
@@ -60,7 +59,7 @@ function ServicePage() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={0} sm={4} lg={4} md={6} className="service-container">
+                <Grid item xs={0} sm={12} lg={4} md={6} className="service-container">
                     <Box className={`service-item ${classes.responseServiceItem}`}>
                         <Box className="service-img" textAlign="center">
                             <img src={animation2} alt="Animation2" />
@@ -70,14 +69,14 @@ function ServicePage() {
                             <Typography variant="h4" mb={1.3} p={0.6} textAlign="center">
                                 Skin treatments
                             </Typography>
-                            <Typography variant="inherit">
+                            <Typography variant="inherit" textAlign="center">
                                 Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis{' '}
                             </Typography>
                         </Box>
                     </Box>
                 </Grid>
 
-                <Grid item xs={0} sm={4} lg={4} md={12} className="service-container">
+                <Grid item xs={0} sm={12} lg={4} md={12} className="service-container">
                     <Box className={`service-item ${classes.responseServiceItem}`}>
                         <Box className="service-img" textAlign="center">
                             <img src={animation3} alt="Animation1" />
@@ -88,7 +87,7 @@ function ServicePage() {
                                 {' '}
                                 Beauty product
                             </Typography>
-                            <Typography variant="inherit">
+                            <Typography variant="inherit" textAlign="center">
                                 {' '}
                                 Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis{' '}
                             </Typography>

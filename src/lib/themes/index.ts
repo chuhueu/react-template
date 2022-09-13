@@ -79,7 +79,6 @@ export const getDesignTokens = (mode?: PaletteMode): any => ({
       fontSize: "14px",
       fontWeight: 400,
       letterSpacing: "1px",
-      textAlign: "center",
     }
   }
 });
