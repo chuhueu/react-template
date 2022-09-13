@@ -36,7 +36,7 @@
     padding: 0;
 }
 .icons-section {
-    color: #fff;
+    color: #fff !important;
 }
 .icons-section svg:hover {
     color: #f78da7;

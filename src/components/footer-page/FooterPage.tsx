@@ -31,7 +31,7 @@ const FooterPage = () => {
                     </Box>
                     <Box className="list-page_footer">
                         <Box>
-                            <Typography>Pages</Typography>
+                            <Box pl = {2.3}>Pages</Box>
                             <List>
                                 <ListItem className="list-pages">
                                     <ArrowRightIcon />
@@ -56,7 +56,7 @@ const FooterPage = () => {
                             </List>
                         </Box>
                         <Box>
-                            <Typography>Informations</Typography>
+                            <Box pl={2.3}>Informations</Box>
                             <List>
                                 <ListItem className="list-pages">
                                     <ArrowRightIcon />
