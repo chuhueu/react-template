@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "./store";
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline ,ThemeProvider} from "@mui/material";
 import { getDesignTokens } from "lib/themes";
 import { renderRoutes } from "react-router-config";
 import { SnackbarProvider } from "notistack";
@@ -10,6 +10,7 @@ import cookie from "cookie";
 import routes from "routes";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { ThemeProvider as ThemeProviderLegacy} from "@mui/styles";
 
 const history: any = createBrowserHistory();
 
@@ -36,10 +37,12 @@ function App() {
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
   return (
     <ThemeProvider theme={theme}>
+      <ThemeProviderLegacy theme={theme}>
       <CssBaseline />
       <SnackbarProvider maxSnack={3}>
         <Router history={history}>{renderRoutes(routes)}</Router>
       </SnackbarProvider>
+      </ThemeProviderLegacy >
     </ThemeProvider>
   );
 }

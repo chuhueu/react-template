@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "./video.css";
-const Vision = () => {
+const Video = () => {
   return (
     <>
       <Box component="section">
@@ -47,4 +47,4 @@ const Vision = () => {
   );
 };
 
-export default Vision;
+export default Video;

@@ -1,18 +1,22 @@
 import React from "react";
-import { Box, List, ListItem } from "@mui/material";
+import { Box, List, ListItem ,Typography} from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import footer_bg1 from "assets/images/about/footer_bg1.png";
 import footerLogo from "assets/images/about/footerLogo.png";
 import "./footer.css";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
 const Footer = () => {
   return (
-    <Box overflow="hidden">
-      <img
+    <Box overflow="hidden" className="bg-ft">
+      {/* <img
         src={footer_bg1}
         alt="background"
         className="background-image-footer"
-      />
-      <Box>
+      /> */}
+      <Box maxWidth={"1152px"} margin="0 auto">
         <Box className="footer-bg1" pt={30}>
           <Box className="footer-size-bar">
             <Box className="footer-size-bar-left">
@@ -28,7 +32,7 @@ const Footer = () => {
                     Baker Steet 101, NY, United States.
                   </Box>
                   <Box className="footer-size-bar-mail-phone">
-                    <Box className="footer-size-bar-phone">
+                    <Box className="footer-size-bar-phone" display={"flex"} alignItems="center">
                       <ArrowRightIcon />
                       521 569 8966.
                     </Box>
@@ -38,28 +42,11 @@ const Footer = () => {
                   </Box>
                 </Box>
               </Box>
-              <Box className="social-media">
-                <Box className="social-media-logo">
-                  <img src="./img/facebook-f.png" alt=""></img>
-                </Box>
-                <Box className="social-media-logo">
-                  <img src="./img/twitter (1).png" alt=""></img>
-                </Box>
-                <Box className="social-media-logo">
-                  <img src="./img/linkedin-in.png" alt=""></img>
-                </Box>
-                <Box className="social-media-logo">
-                  <img src="./img/youtube.png" alt=""></img>
-                </Box>
-                <Box className="social-media-logo">
-                  <img src="./img/instagram (1).png" alt=""></img>
-                </Box>
-              </Box>
             </Box>
             <Box className="footer-size-bar-right">
               <Box className="size-map">
                 <Box>
-                  <h4>Pages</h4>
+                  <Typography variant="h4" paddingLeft={1.2} fontSize="18px">Pages</Typography>
                   <List>
                     <ListItem>
                       <ArrowRightIcon />
@@ -85,7 +72,7 @@ const Footer = () => {
                   </List>
                 </Box>
                 <Box className="informations" mb={18}>
-                  <h4>Informations</h4>
+                <Typography variant="h4" paddingLeft={1.2} fontSize="18px">Informations</Typography>
                   <List>
                     <ListItem>
                       <ArrowRightIcon />
@@ -105,11 +92,30 @@ const Footer = () => {
                     </ListItem>
                   </List>
                 </Box>
-                <Box className="alt-desain">
-                  © AltDesain Studio 2021 - All right reserved.
-                </Box>
               </Box>
             </Box>
+          </Box>
+          <Box className="logo-alt-desain" width={"100%"} display="flex" justifyContent="space-between" mb={10} alignItems="center">
+             <Box className="social-media">
+                <Box className="social-media-logo" >
+                 <FacebookIcon fontSize="large" />
+                </Box>
+                <Box className="social-media-logo">
+                <TwitterIcon fontSize="large"/>
+                </Box>
+                <Box className="social-media-logo">
+                <LinkedInIcon fontSize="large"/>
+                </Box>
+                <Box className="social-media-logo">
+                <YouTubeIcon fontSize="large"/>
+                </Box>
+                <Box className="social-media-logo">
+                <InstagramIcon fontSize="large"/>
+                </Box>
+              </Box>
+               <Box className="alt-desain">
+                 <Box> © AltDesain Studio 2021 - All right reserved.</Box>
+                </Box>
           </Box>
         </Box>
       </Box>

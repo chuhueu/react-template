@@ -19,7 +19,8 @@ const Slogan = () => {
           className="background-mask"
         /> */}
         {/* <Box className="background-mask"></Box> */}
-        <Box className="slogan">
+       <Box className="background-mask">
+       <Box className="slogan">
           <Typography
             variant="subtitle2"
             mb={2}
@@ -48,6 +49,7 @@ const Slogan = () => {
             <br /> purus sit amet luctus venenatis
           </Box>
         </Box>
+       </Box>
       </Box>
     </>
   );

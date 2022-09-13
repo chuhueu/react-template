@@ -20,7 +20,7 @@ const ButtonOnTop = () => {
       {showButtonOnTop && (
         <a href="#">
           {" "}
-          <button>
+          <button className="button-scroll-top">
             <ArrowUpwardIcon />
           </button>
         </a>

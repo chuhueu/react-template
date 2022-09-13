@@ -12,13 +12,13 @@
 .background-image-vision {
   position: absolute;
   width: 100%;
-  padding: 10px;
+  max-height: 1100px;
   left: 0;
   z-index: -1;
 }
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .section-vision-img{
     display: flex;
     justify-content: center;
   }
-}
+} */

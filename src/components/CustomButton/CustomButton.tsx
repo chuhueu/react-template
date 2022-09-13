@@ -11,5 +11,4 @@ const CustomButton = styled(MuiButton)(() => ({
     backgroundColor: "#091156",
   },
 }));
-
 export default CustomButton;

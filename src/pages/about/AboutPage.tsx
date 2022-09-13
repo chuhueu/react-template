@@ -2,27 +2,14 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 // import "./about.css";
-import { Slogan } from "./components/BusinessSlogan";
-import { Vision } from "./components/SectionVisions";
-import { ButtonOnTop } from "./components/ShowButtonOnTop";
-import { ProfessionalTeams } from "./components/ProfessionalTeams";
+import { Slogan } from "./components/business-slogan";
+import { Vision } from "./components/section-visions";
+import { ButtonOnTop } from "../../components/show-button-on-top";
+import { ProfessionalTeams } from "./components/professional-teams";
 import { Slide } from "./components/Slide";
 import { Video } from "./components/Video";
-import { Footer } from "./components/Footer";
-
+import { Footer } from "../../components/footer";
 const AboutPage = () => {
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 0,
-  //       sm: 640,
-  //       md: 900,
-  //       lg: 1024,
-  //       xl: 1536,
-  //     },
-  //   },
-  // });
-
   return (
     <>
       <Video />
@@ -35,5 +22,4 @@ const AboutPage = () => {
     </>
   );
 };
-
 export default AboutPage;

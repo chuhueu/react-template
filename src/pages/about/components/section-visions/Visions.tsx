@@ -1,5 +1,4 @@
 import React from "react";
-import { createTheme, useTheme, styled } from "@mui/material/styles";
 import { Theme } from "@mui/material/styles";
 import { Box, Typography, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -9,18 +8,17 @@ import Illustration from "assets/images/about/Illustration.png";
 import Illustration2 from "assets/images/about/Illustration2.png";
 const useStyles = makeStyles((theme: Theme) => ({
   customLink: {
-    backgroundColor: "red",
-    // [theme.breakpoints.down("sm")]: {
-    //   backgroundColor: "black",
-    // },
+    [theme.breakpoints.down("lg")]: {
+      display: "flex",
+      justifyContent: "center"
+    },
   },
 }));
-
 function Vision() {
   const classes = useStyles();
   return (
     <Box>
-      <Box component="section" mt={30}>
+      <Box component="section" mt={100}>
         <Grid className="landing-page-about" container>
           <Grid
             item
@@ -115,7 +113,7 @@ function Vision() {
           </Grid>
           <Grid
             item
-            className="section-vision-img"
+            className={`section-vision-img ${classes.customLink}`}
             xs={12}
             lg={5}
             md={12}

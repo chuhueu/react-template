@@ -1,11 +1,10 @@
 .background-mask{
-  width: 100%;
-  min-height: 529px;
-  left: 0;
+  /* width: 100%; */
+  /* left: 0;
   position: absolute;
   right: 0;
   background-color: #091156;
-    opacity: 0.6;
+    opacity: 0.6; */
 }
 .background-mask{
   height: 100%;
@@ -23,4 +22,16 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.background-mask{
+  /* width: 100%;
+  height: 100%; */
+  background-color: #091156;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
