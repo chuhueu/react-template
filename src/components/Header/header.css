@@ -10,3 +10,6 @@
 .menu-list-items a:hover {
   color: #414880 !important;
 }
+.font-size-icon-nav-mobile svg{
+  font-size: 70px;
+}
