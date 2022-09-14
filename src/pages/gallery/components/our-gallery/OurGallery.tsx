@@ -1,7 +1,9 @@
 import { Box, Typography, Grid } from '@mui/material';
-import { ImageList, ImageListItem } from '@mui/material';
+import { ImageList, ImageListItem, List, ListItemIcon } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 
+import { CustomButton } from 'components';
 import img1 from 'assets/images/gallery/1.png';
 import img2 from 'assets/images/gallery/2.png';
 import img3 from 'assets/images/gallery/3.png';
@@ -21,10 +23,19 @@ const useStyles = makeStyles((theme: any) => ({
     },
     responseDescription: {
         [theme.breakpoints.down('md')]: {
-            width:'100% !important',
+            width: '100% !important',
         },
     },
-
+    responseTouchBtn: {
+        [theme.breakpoints.down('md')]: {
+            textAlign: 'left !important',
+        },
+    },
+    responseTouchContainer: {
+        [theme.breakpoints.down('md')]: {
+            flexWrap: 'wrap !important',
+        },
+    },
 }));
 
 function OurGallery() {
@@ -43,7 +54,7 @@ function OurGallery() {
                 </Box>
                 <Grid container item pt={9.8}>
                     <Grid>
-                        <ImageList sx={{ width: '100%' }} cols={3}>
+                        <ImageList cols={3}>
                             {itemData.map((item) => (
                                 <ImageListItem
                                     className="list-img_gallery"
@@ -74,6 +85,48 @@ function OurGallery() {
                 </Grid>
             </Box>
 
+            <Box component="section" className="gallery-container" mt={19.5} mb={16} height={725}>
+                <Box className="background-overlay">
+                    <Box textAlign="center" pt={23} maxWidth="1152px" ml="auto" mr="auto">
+                        <Box>
+                            <Typography variant="h3" mb={2.5} pl={0.5} pr={1.5} color="white" fontSize="36px">
+                                Watch the video tour
+                            </Typography>
+                            <Typography variant="inherit">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet
+                                luctus venenatis
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <List>
+                                <ListItemIcon className="icon-play-gallery">
+                                    <PlayCircleOutlineRoundedIcon />
+                                </ListItemIcon>
+                            </List>
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
+            <Box pt={20}></Box>
+
+            <Grid className={`touch_container ${classes.responseTouchContainer}`} container pt={100} pb={18} gap={2}>
+                <Grid item lg={7} md={12} className="title_touch">
+                    <Box mb={1.3}>
+                        <Typography variant="subtitle2">Get In Touch</Typography>
+                    </Box>
+                    <Box mb={2.5}>
+                        <Typography variant="h3">Want to be handled by our professional team immediately?</Typography>
+                    </Box>
+                    <Typography variant="inherit">
+                        Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.
+                    </Typography>
+                </Grid>
+                <Grid item lg={5} md={12} className={`touch_btn ${classes.responseTouchBtn}`}>
+                    <CustomButton variant="contained" color="secondary">
+                        Make an Appointment
+                    </CustomButton>
+                </Grid>
+            </Grid>
         </Box>
     );
 }
