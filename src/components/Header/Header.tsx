@@ -14,6 +14,7 @@ import './header.css';
 import logo from 'assets/images/logo/beauties-logo.png';
 import CustomButton from 'components/CustomButton/CustomButton';
 import CustomLink from '../CustomLink/CustomLink';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: any) => ({
     handleHeader: {
@@ -34,6 +35,20 @@ const useStyles = makeStyles((theme: any) => ({
             display: 'none !important',
         },
     },
+    displayButtonMobile: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none !important',
+        },
+    },
+    displayNoneButtonMobile: {
+        [theme.breakpoints.up('md')]: {
+            display: 'none !important',
+        },
+        [theme.breakpoints.down('md')]: {
+            display: 'block !important',
+        },
+    },
+    
 }));
 
 export interface SelectedRoute {
@@ -59,6 +74,7 @@ function Item(props: BoxProps) {
 }
 
 const Header = () => {
+    const history = useHistory();
     const classes = useStyles();
     const trigger = useScrollTrigger();
     const routeArr: SelectedRoute[] = [
@@ -96,6 +112,9 @@ const Header = () => {
         );
     });
     const [open, setOpen] = useState(false);
+    const navigateToContact = () => {
+        history.push("/contact")
+    }
     return (
         <>
             <Box
@@ -146,17 +165,24 @@ const Header = () => {
                                         <ListItemIcon className="list-menu">
                                             <img src={logo} alt=" logo" />
                                             <ListItemText className="items-menu"> {listItems} </ListItemText>
+                                            <ListItemIcon className={classes.displayNoneButtonMobile}>
+                                                <CustomButton variant="contained" color="secondary" onClick={navigateToContact}>
+                                                              Contact
+                                                </CustomButton>
+                                            </ListItemIcon>
                                         </ListItemIcon>
                                     </ListItemButton>
                                 </List>
                             </Drawer>
-                            <IconButton sx={{ marginLeft: 'auto', fontSize: '36px' }} onClick={() => setOpen(true)}>
+                            <IconButton sx={{ marginLeft: 'auto'}} onClick={() => setOpen(true)} className="font-size-icon-nav-mobile">
                                 <MenuSharpIcon />
                             </IconButton>
                         </Box>
-                        <CustomButton variant="contained" color="secondary">
+                        <Box  className={classes.displayButtonMobile} >
+                        <CustomButton variant="contained" color="secondary" onClick={navigateToContact}>
                             Contact
                         </CustomButton>
+                        </Box>
                     </Box>
                 </Box>
             </Box>

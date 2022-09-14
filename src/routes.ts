@@ -19,6 +19,10 @@ const routes = [
       {
         path: paths.service,
         component: lazy(() => import("pages/service/ServicePage")),
+      },  
+      {
+        path: paths.contact,
+        component: lazy(() => import("pages/contact/ContactPage")),
       },
     ],
   },
