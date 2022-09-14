@@ -25,13 +25,15 @@ function OurGallery() {
                     </Typography>
                 </Box>
                 <Box pt={9.8}>
-                    <ImageList sx={{width:'100%'}} cols={3} rowHeight={164}>
+                    <ImageList sx={{ width: '100%' }} cols={3}>
                         {itemData.map((item) => (
                             <ImageListItem key={item.img}>
-                                <img src={item.img}
-                                 srcSet={item.img}
-                                alt={item.title}
-                                 loading="lazy" />
+                                <img
+                                    src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                                    srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                    alt={item.title}
+                                    loading="lazy"
+                                />
                             </ImageListItem>
                         ))}
                     </ImageList>
@@ -43,41 +45,61 @@ function OurGallery() {
 
 const itemData = [
     {
-        img: 'assets/images/gallery/1.png',
+        img: img1,
         title: 'Breakfast',
     },
     {
-        img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery2.png',
-        title: 'Burger',
+        img: img1,
+        title: 'Breakfast',
     },
     {
-        img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery3.png',
-        title: 'Camera',
+        img: img1,
+        title: 'Breakfast',
     },
     {
-        img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery4.png',
-        title: 'Coffee',
+        img: img1,
+        title: 'Breakfast',
     },
     {
-        img: '',
-        title: 'Hats',
+        img: img1,
+        title: 'Breakfast',
     },
     {
-        img: '{img6}',
-        title: 'Honey',
+        img: img1,
+        title: 'Breakfast',
     },
-    {
-        img: '{img7}',
-        title: 'Basketball',
-    },
-    {
-        img: '{img8}',
-        title: 'Fern',
-    },
-    {
-        img: '{img9}',
-        title: 'Mushrooms',
-    },
+    // {
+    //     img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery2.png',
+    //     title: 'Burger',
+    // },
+    // {
+    //     img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery3.png',
+    //     title: 'Camera',
+    // },
+    // {
+    //     img: 'https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/img-gallery4.png',
+    //     title: 'Coffee',
+    // },
+    // {
+    //     img: '',
+    //     title: 'Hats',
+    // },
+    // {
+    //     img: '{img6}',
+    //     title: 'Honey',
+    // },
+    // {
+    //     img: '{img7}',
+    //     title: 'Basketball',
+    // },
+    // {
+    //     img: '{img8}',
+    //     title: 'Fern',
+    // },
+    // {
+    //     img: '{img9}',
+    //     title: 'Mushrooms',
+    // },
 ];
 
 export default OurGallery;
