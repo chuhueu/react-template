@@ -14,7 +14,7 @@ const FooterPage = () => {
     return (
         <Box component="section" overflow="hidden" className="bg-ft">
             <Box maxWidth={'1152px'} margin="0 auto" pt={31}>
-                <Box className="test" gap={2}>
+                <Box className="footer-container" gap={2}>
                     <Box>
                         <Box mb={2.5}>
                             <img src={footerLogo} alt="FooterLogo" />

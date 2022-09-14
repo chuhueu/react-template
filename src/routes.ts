@@ -20,6 +20,10 @@ const routes = [
         path: paths.service,
         component: lazy(() => import("pages/service/ServicePage")),
       },
+      {
+        path: paths.gallery,
+        component: lazy(() => import("pages/gallery/Gallery")),
+      },
     ],
   },
 ];
