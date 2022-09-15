@@ -26,6 +26,9 @@ box-shadow: 0px 25px 50px 25px #F7F7FF;
   padding: 0 77px 0 77px;
   display: flex;
 }
+.profile-footer img{
+  max-width: none !important;
+}
 .profile-footer ul{
   list-style: none;
   padding: 0;
