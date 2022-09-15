@@ -24,6 +24,10 @@ const routes = [
         path: paths.gallery,
         component: lazy(() => import("pages/gallery/Gallery")),
       },
+      {
+        path: paths.blog,
+        component: lazy(() => import("pages/blog/Blog")),
+      },
     ],
   },
 ];
