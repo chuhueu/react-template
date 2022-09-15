@@ -154,7 +154,7 @@ const Header = () => {
                     >
                         <Box
                             className={classes.handleIcon}
-                            mr={5}
+                            // mr={5}
                             sx={{
                                 display: 'none',
                             }}
