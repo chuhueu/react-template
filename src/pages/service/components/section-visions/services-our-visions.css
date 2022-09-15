@@ -1,0 +1,30 @@
+
+.landing-page-about {
+  display: flex;
+  justify-content: space-between;
+}
+.background-image-vision {
+  position: absolute;
+  width: 100%;
+  max-height: 1100px;
+  left: 0;
+  z-index: -1;
+}
+/* @media (max-width: 1200px) {
+  .section-vision-img{
+    display: flex;
+    justify-content: center;
+  }
+} */
+.get-the-services-wrapper :hover{ 
+  color: #FF64AE!important;
+}
+.get-the-services{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+.width-image{
+  width: 100%;
+}
