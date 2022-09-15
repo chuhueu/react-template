@@ -15,6 +15,11 @@ const useStyles = makeStyles((theme: Theme) => ({
       justifyContent: "center"
     },
   },
+  customImg: {
+    [theme.breakpoints.down("xs")]: {
+      // width: "100% !important",
+    },
+  },
 }));
 function ServicesOurVisions() {
   const classes = useStyles();
@@ -31,7 +36,7 @@ function ServicesOurVisions() {
             sm={12}
             className={`section-vision-img ${classes.customLink}`}
           >
-            <img src={Animation1} alt="treatment"className="width-image" />
+            <img src={Animation1} alt="treatment"className={classes.customLink}/>
           </Grid>
           <Grid
             item
@@ -104,7 +109,7 @@ function ServicesOurVisions() {
             md={12}
             sm={12}
           >
-            <img src={Animation2} alt="treatment" className="width-image"/>
+            <img src={Animation2} alt="treatment" className={classes.customLink}/>
           </Grid>
         </Grid>
         {/* box 3  */}
@@ -117,7 +122,7 @@ function ServicesOurVisions() {
             sm={12}
             className={`section-vision-img ${classes.customLink}`}
           >
-            <img src={Animation3} alt="treatment" className="width-image"/>
+            <img src={Animation3} alt="treatment" className={classes.customLink}/>
           </Grid>
           <Grid
             item

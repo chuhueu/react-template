@@ -10,12 +10,6 @@
   left: 0;
   z-index: -1;
 }
-/* @media (max-width: 1200px) {
-  .section-vision-img{
-    display: flex;
-    justify-content: center;
-  }
-} */
 .get-the-services-wrapper :hover{ 
   color: #FF64AE!important;
 }
@@ -25,6 +19,7 @@
   cursor: pointer;
 
 }
-.width-image{
-  width: 100%;
+.get-the-services svg{
+  color: #FF64AE;
 }
+
