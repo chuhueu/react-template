@@ -2,7 +2,6 @@ import { Box, Typography, Grid, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import CustomButton from 'components/custom-button/CustomButton';
-// import './about-page.css';
 import imgAbout from 'assets/images/home/about.png';
 import backgroundSideAbout from 'assets/images/home/BG-1.png';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
