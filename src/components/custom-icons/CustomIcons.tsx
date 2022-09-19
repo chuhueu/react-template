@@ -2,10 +2,10 @@ import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+
 import './custom-icons.css';
 
 const useStyles = makeStyles((theme: any) => ({
@@ -15,6 +15,24 @@ const useStyles = makeStyles((theme: any) => ({
             marginRight: '10px !important',
         },
     },
+    iconProfessionalFaceBook: {
+        '&:hover': {
+            backgroundColor: '#3b5998',
+            color: '#fff',
+        },
+    },
+    iconProfessionalTw: {
+        '&:hover': {
+            backgroundColor: '#1da1f2',
+            color: '#fff',
+        },
+    },
+    iconProfessionalIns: {
+        '&:hover': {
+            backgroundColor: '#fb679b',
+            color: '#fff',
+        },
+    },
 }));
 
 function CustomIcons() {
@@ -22,14 +40,20 @@ function CustomIcons() {
 
     return (
         <Box textAlign="center">
-            <List className="list-icons_professional" component="ul">
-                <ListItem className={`icons_professional icons_professional-fb ${classes.responseIcon}`}>
+            <List
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+                component="ul"
+            >
+                <ListItem className={classes.iconProfessionalFaceBook}>
                     <FacebookRoundedIcon />
                 </ListItem>
-                <ListItem className={`icons_professional icons_professional-tw ${classes.responseIcon}`}>
+                <ListItem className={classes.iconProfessionalTw}>
                     <TwitterIcon />
                 </ListItem>
-                <ListItem className={`icons_professional icons_professional-ins ${classes.responseIcon}`}>
+                <ListItem className={classes.iconProfessionalIns}>
                     <InstagramIcon />
                 </ListItem>
             </List>

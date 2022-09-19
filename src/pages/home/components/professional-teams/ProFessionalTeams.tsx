@@ -13,6 +13,16 @@ const useStyles = makeStyles((theme: any) => ({
             width: '100% !important',
         },
     },
+    proFessionalTeams: {
+        backgroundColor: '#ffffff00',
+        boxShadow: '0px 0px 0px 0px rgb(255 255 255 / 0%)',
+        padding: '91px 60px 94px 60px',
+        borderRadius: '42px 42px 42px 42px',
+    },
+    proFessionalTeamsActive: {
+        backgroundColor: '#fff',
+        boxShadow: '0px 25px 50px 25px #f6f7ff',
+    },
 }));
 
 function ProFessionalTeams() {
@@ -31,8 +41,9 @@ function ProFessionalTeams() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.
                 </Typography>
             </Box>
-            <Grid container  pt={12.5} textAlign="center" className="professional-container">
-                <Grid item xs={0} sm={12} lg={4} md={4} className="professional-teams">
+
+            <Grid container pt={12.5} textAlign="center">
+                <Grid item xs={0} sm={12} lg={4} md={4} className={classes.proFessionalTeams}>
                     <Box>
                         <img src={ProFessionalTeams1} alt="FessionalTeams1" />
                     </Box>
@@ -56,7 +67,14 @@ function ProFessionalTeams() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={0} sm={12} lg={4} md={4} className="professional-teams professional-teams-active ">
+                <Grid
+                    item
+                    xs={0}
+                    sm={12}
+                    lg={4}
+                    md={4}
+                    className={`${classes.proFessionalTeams} ${classes.proFessionalTeamsActive} `}
+                >
                     <Box>
                         <img src={ProFessionalTeams2} alt="FessionalTeams1" />
                     </Box>
@@ -80,7 +98,7 @@ function ProFessionalTeams() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={0} sm={12} lg={4} md={4} className="professional-teams">
+                <Grid item xs={0} sm={12} lg={4} md={4} className={classes.proFessionalTeams}>
                     <Box>
                         <img src={ProFessionalTeams3} alt="FessionalTeams1" />
                     </Box>
