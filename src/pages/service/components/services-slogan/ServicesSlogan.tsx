@@ -1,9 +1,10 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { Box, Typography ,Container} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import "./services-slogan.css";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-
+import Doremon from "assets/images/services/BG-Mask.png";
 
 
 
@@ -51,10 +52,12 @@ serviceCustomersItemLeftContent: {
 
 
 const ServicesSlogan = () => {
+
+  const [showpopPupVideo ,setpopPupVideo  ] = useState(false);
   const classes = useStyles();
   return (
     <>
-      <Box
+      <Box  
         component="section"
         className="services-slogan"
         marginTop={"150px"}
@@ -62,12 +65,19 @@ const ServicesSlogan = () => {
         minHeight={"529px"}
       >
         <Box className="services-slogan-background">
+        {showpopPupVideo && 
+        (<Box className="popPupVideo">
+                <Box ><img src={Doremon} alt="" />
+                <Box className="popPupVideoClose" onClick={()=>setpopPupVideo(!showpopPupVideo)}>X</Box>
+                </Box>
+               
+        </Box>)}
         <Container maxWidth="lg">
             <Box display="flex" justifyContent="space-between" pt={23}ml="auto" mr="auto"
              className={`${classes.customsServicesSlogan}`}
             >
               <Box width="50%" className={`${classes.serviceCustomers}`}>
-                    <Typography variant="h3" mb={2.5} pl={0.5} pr={1.5} color="white" font-size="36px"
+                    <Typography variant="h3" mb={2.5} pl={0.5} pr={1.5} color="white" fontSize="36px"
                      className={`${classes.serviceCustomersItem}`}
                     >
                             Best responsibility and service
@@ -82,7 +92,7 @@ const ServicesSlogan = () => {
               <Box width="49.5%"  ml={18} className={`${classes.serviceCustomersItemLeft}`}>
                    <Box display="flex"  alignItems={"center"}>
                       <Box className="services-slogan-icon-play" color="white">
-                              <PlayCircleOutlineIcon />
+                              <PlayCircleOutlineIcon onClick={()=>setpopPupVideo(!showpopPupVideo)}/>
                       </Box>
                       <Box ml={10} className={`${classes.serviceCustomersItemLeftContent}`}>
                               <Typography variant="h6"  color="white"
