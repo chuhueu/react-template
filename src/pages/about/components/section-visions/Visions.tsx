@@ -13,13 +13,31 @@ const useStyles = makeStyles((theme: Theme) => ({
             justifyContent: 'center',
         },
     },
+
+    sectionVisionImg: {
+        maxWidth: '100%',
+        height: ' auto',
+        padding: 0,
+        margin: '0 auto',
+    },
+    landingPageAbout: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
+    backgroundImageVision: {
+        position: 'absolute',
+        width: '100%',
+        maxHeight: '1275px',
+        left: 0,
+        zIndex: -1,
+    },
 }));
 function Vision() {
     const classes = useStyles();
     return (
         <Box>
             <Box component="section" mt={100}>
-                <Grid className="landing-page-about" container>
+                <Grid className={`${classes.landingPageAbout}`} container>
                     <Grid
                         item
                         // className="section-vision-img"
@@ -27,18 +45,18 @@ function Vision() {
                         lg={5}
                         md={12}
                         sm={12}
-                        className={`section-vision-img ${classes.customLink}`}
+                        className={`${classes.customLink}`}
                     >
-                        <img src={Illustration} alt="treatment" />
+                        <img src={Illustration} alt="treatment" className={`${classes.sectionVisionImg}`} />
                     </Grid>
-                    <Grid item className="section-vision-content" xs={12} lg={5} md={12} sm={12}>
+                    <Grid item xs={12} lg={5} md={12} sm={12}>
                         <Typography variant="subtitle2" mb={2} paddingTop="0">
                             Our Vision
                         </Typography>
                         <Typography variant="h2" mb={2} fontSize="36px" lineHeight={'125%'}>
                             Be the best and go international
                         </Typography>
-                        <img src={BG4a} alt="background" className="background-image-vision" />
+                        <img src={BG4a} alt="background" className={`${classes.backgroundImageVision}`} />
                         <Typography variant="subtitle1" mb={3} lineHeight="34px" color=" #8B8B8B;">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec
                             amet. Egestas volutpat facilisi eu libero.
@@ -51,8 +69,8 @@ function Vision() {
 
                 {/* Our Mission  */}
 
-                <Grid container className="landing-page-about" mt={18}>
-                    <Grid item className="section-vision-content" xs={12} lg={5} md={12} sm={12}>
+                <Grid container className={`${classes.landingPageAbout}`} mt={18}>
+                    <Grid item xs={12} lg={5} md={12} sm={12}>
                         <Typography variant="subtitle2" mb={2} textAlign="left" paddingTop="0" fontSize="16px">
                             Our Mission
                         </Typography>
