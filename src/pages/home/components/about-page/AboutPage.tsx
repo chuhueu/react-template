@@ -2,18 +2,20 @@ import { Box, Typography, Grid, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import CustomButton from 'components/custom-button/CustomButton';
-import './about-page.css';
+// import './about-page.css';
 import imgAbout from 'assets/images/home/about.png';
 import backgroundSideAbout from 'assets/images/home/BG-1.png';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 
 const useStyles = makeStyles((theme: any) => ({
     responseHideAbout: {
+        display: 'flex',
         [theme.breakpoints.down('md')]: {
             display: 'none !important',
         },
     },
     responseFullWidthAbout: {
+        width: '50%',
         [theme.breakpoints.down('md')]: {
             width: '80% !important',
         },
@@ -24,6 +26,20 @@ const useStyles = makeStyles((theme: any) => ({
             justifyContent: 'center !important',
         },
     },
+    aboutPage: {
+        display: 'flex',
+        flexWrap: 'nowrap!important' as 'nowrap',
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        justifyContent: 'space-around',
+    },
+    imgAbout: {
+        position: 'absolute',
+        right: '0',
+        top: '1200px',
+        zIndex: '-1',
+    },
 }));
 
 function AboutPage() {
@@ -31,10 +47,10 @@ function AboutPage() {
 
     return (
         <Box component="section" pt={25}>
-            <img src={backgroundSideAbout} alt="backgroundAbout" className="img-about" />
+            <img src={backgroundSideAbout} alt="backgroundAbout" className={classes.imgAbout} />
 
-            <Grid container className="about-page" gap={2}>
-                <Grid item className={`about-text ${classes.responseFullWidthAbout}`}>
+            <Grid container className={classes.aboutPage} gap={2}>
+                <Grid item className={classes.responseFullWidthAbout}>
                     <Typography className={classes.responseTextCenter} variant="subtitle2" textAlign="left" mb={1.5}>
                         About us
                     </Typography>
@@ -52,14 +68,37 @@ function AboutPage() {
                             Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.
                         </Typography>
                     </Box>
-                    <Grid className={`about-btn ${classes.responseTextCenter}`}>
+                    <Grid sx={{ display: 'flex' }} className={classes.responseTextCenter}>
                         <CustomButton variant="contained" color="secondary">
                             Learn More
                         </CustomButton>
-                        <Grid className={`btn-watch ${classes.responseHideAbout}`}>
-                            <Typography className="btn-link">
+                        <Grid
+                            sx={{
+                                alignItems: 'center',
+                                padding: '0px 50px',
+                            }}
+                            className={classes.responseHideAbout}
+                        >
+                            <Typography
+                                sx={{
+                                    width: '49px',
+                                    height: '49px',
+                                    lineHeight: '30px',
+                                    borderRadius: '50%',
+                                    backgroundColor: '#091156',
+                                    padding: '10px',
+                                    '&:hover': {
+                                        backgroundColor: '#ACB2EC',
+                                    },
+                                }}
+                            >
                                 <Link href="#" variant="body2">
-                                    <PlayArrowRoundedIcon className="icon-plays" />
+                                    <PlayArrowRoundedIcon
+                                        sx={{
+                                            color: '#ffffff',
+                                            fontSize: '30px',
+                                        }}
+                                    />
                                 </Link>
                             </Typography>
                             <Typography fontSize={20} pl={2}>
@@ -69,7 +108,7 @@ function AboutPage() {
                     </Grid>
                 </Grid>
 
-                <Grid item className={`about-img ${classes.responseHideAbout}`} ml={8}>
+                <Grid item className={classes.responseHideAbout} ml={8}>
                     <img src={imgAbout} alt="imgAbout" width="476" height="350" />
                 </Grid>
             </Grid>
