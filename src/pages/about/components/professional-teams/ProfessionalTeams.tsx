@@ -8,12 +8,32 @@ import ProFessionalTeams1 from 'assets/images/home/fess1.png';
 import ProFessionalTeams2 from 'assets/images/home/fess2.png';
 import ProFessionalTeams3 from 'assets/images/home/fess3.png';
 import './ProfessionalTeams.css';
-
 const useStyles = makeStyles((theme: any) => ({
     responseServiceItem: {
         [theme.breakpoints.down('sm')]: {
             width: '100% !important',
         },
+    },
+    professionalContainer: {
+        display: 'flex',
+        width: '100%',
+    },
+    professionalTeams: {
+        backgroundColor: '#ffffff00',
+        boxShadow: '0px 0px 0px 0px rgb(255 255 255 / 0%)',
+        padding: '91px 60px 94px 60px',
+        borderRadius: '42px 42px 42px 42px',
+    },
+    professionalTeamsActive: {
+        backgroundColor: '#fff',
+        boxShadow: '0px 25px 50px 25px #f6f7ff',
+    },
+    backgroundImageAbout: {
+        position: 'absolute',
+        right: 0,
+        zIndex: -1,
+        backgroundImage:
+            'url(https://wordpress.altdesain.com/beautice/beautyclinic/wp-content/uploads/2021/11/BG-3.png)',
     },
 }));
 
@@ -23,7 +43,7 @@ const Slogan = () => {
     return (
         <>
             <Box component="section" marginTop={'-358px'}>
-                <img src={BG} alt="background" className="background-image-about" />
+                <img src={BG} alt="background" className={` ${classes.backgroundImageAbout}`} />
                 <Box>
                     <Box paddingTop="153px">
                         <Box component="section">
@@ -44,8 +64,8 @@ const Slogan = () => {
                             </Box>
                         </Box>
                     </Box>
-                    <Grid container pt={12.5} textAlign="center" className="professional-container">
-                        <Grid item xs={0} sm={12} lg={4} md={4} className="professional-teams">
+                    <Grid container pt={12.5} textAlign="center" className={` ${classes.professionalContainer}`}>
+                        <Grid item xs={0} sm={12} lg={4} md={4} className={` ${classes.professionalTeams}`}>
                             <Box>
                                 <img src={ProFessionalTeams1} alt="FessionalTeams1" />
                             </Box>
@@ -75,7 +95,7 @@ const Slogan = () => {
                             sm={12}
                             lg={4}
                             md={4}
-                            className="professional-teams professional-teams-active "
+                            className={` ${classes.professionalTeams} ${classes.professionalTeamsActive}`}
                         >
                             <Box>
                                 <img src={ProFessionalTeams2} alt="FessionalTeams1" />
@@ -100,7 +120,7 @@ const Slogan = () => {
                             </Box>
                         </Grid>
 
-                        <Grid item xs={0} sm={12} lg={4} md={4} className="professional-teams">
+                        <Grid item xs={0} sm={12} lg={4} md={4} className={` ${classes.professionalTeams} `}>
                             <Box>
                                 <img src={ProFessionalTeams3} alt="FessionalTeams1" />
                             </Box>
