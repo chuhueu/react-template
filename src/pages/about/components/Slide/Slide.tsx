@@ -7,7 +7,7 @@ import LOGO4 from 'assets/images/about/LOGO4.png';
 import LOGO5 from 'assets/images/about/LOGO5.png';
 function Slide() {
     return (
-        <Box component="section" pb={20}>
+        <Box component="section" pb={14}>
             <Typography variant="subtitle2" mb={2} textAlign="center" paddingTop="0" mt={14}>
                 Our Clients
             </Typography>
