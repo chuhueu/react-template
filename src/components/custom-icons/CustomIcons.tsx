@@ -6,10 +6,20 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-import './custom-icons.css';
+import './custom-icons.css'
 
 const useStyles = makeStyles((theme: any) => ({
     responseIcon: {
+        cursor: 'pointer',
+        backgroundColor: '#ffffff',
+        boxShadow: '-2px 6px 16px -1px #e6e9fd',
+        width: '49px !important',
+        height: '49px !important',
+        borderRadius: '50%',
+        padding: '13px !important',
+        margin: '0 auto',
+        color: '#091156',
+
         [theme.breakpoints.down('md')]: {
             marginLeft: '10px !important',
             marginRight: '10px !important',
@@ -47,13 +57,13 @@ function CustomIcons() {
                 }}
                 component="ul"
             >
-                <ListItem className={classes.iconProfessionalFaceBook}>
+                <ListItem className={`${classes.responseIcon} ${classes.iconProfessionalFaceBook}`}>
                     <FacebookRoundedIcon />
                 </ListItem>
-                <ListItem className={classes.iconProfessionalTw}>
+                <ListItem className={`${classes.responseIcon} ${classes.iconProfessionalTw}`}>
                     <TwitterIcon />
                 </ListItem>
-                <ListItem className={classes.iconProfessionalIns}>
+                <ListItem className={`${classes.responseIcon} ${classes.iconProfessionalIns}`}>
                     <InstagramIcon />
                 </ListItem>
             </List>
