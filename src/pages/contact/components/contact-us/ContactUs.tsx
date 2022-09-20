@@ -1,11 +1,13 @@
 import { Box, Typography, Grid } from '@mui/material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
-import TextField from '@mui/material/TextField';
 import { makeStyles } from '@mui/styles';
-import './contact-us.css';
+// import './contact-us.css';
 import ContactUsImg from 'assets/images/contact/animation-contacts.png';
 import Bubble1 from 'assets/images/contact/Bubble1.png';
 import { CustomButton } from 'components';
+import InputBase from '@mui/material/InputBase';
+
+import { styled } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme: any) => ({
     responseImg: {
@@ -37,12 +39,7 @@ const useStyles = makeStyles((theme: any) => ({
         right: 0,
         zIndex: -1,
     },
-    input: {
-        backgroundColor: ' white !important',
-        borderRadius: ' 15px',
-        borderColor: ' #d9ddfe',
-        outline: 'none !important',
-    },
+
     contactInputBottom: {
         width: '100% !important',
         outline: 'none',
@@ -57,8 +54,19 @@ const useStyles = makeStyles((theme: any) => ({
             textAlign: 'center',
         },
     },
+    borderRadiusInput: {
+        borderRadius: ' 15px',
+    },
 }));
-
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+    '& .MuiInputBase-input': {
+        borderRadius: 15,
+        border: '1px solid #d9ddfe',
+        fontSize: 16,
+        padding: '15px 12px',
+        backgroundColor: 'white',
+    },
+}));
 const ContactUs = () => {
     const classes = useStyles();
     return (
@@ -97,6 +105,7 @@ const ContactUs = () => {
                         </Typography>
 
                         <Box>
+                            {/* name input */}
                             <Box
                                 className={`${classes.responseInput}`}
                                 mb={5}
@@ -107,11 +116,11 @@ const ContactUs = () => {
                                     maxWidth: '100%',
                                 }}
                             >
-                                <TextField fullWidth placeholder="First Name" className={classes.input} />
+                                <BootstrapInput fullWidth placeholder="First Name" />
 
-                                <TextField fullWidth placeholder="Last Name" className={classes.input} />
+                                <BootstrapInput fullWidth placeholder="Last Name" />
                             </Box>
-
+                            {/* email input */}
                             <Box
                                 className={` ${classes.responseInput}`}
                                 display={'flex'}
@@ -121,9 +130,9 @@ const ContactUs = () => {
                                     maxWidth: '100%',
                                 }}
                             >
-                                <TextField fullWidth placeholder="Email Address" className={classes.input} />
+                                <BootstrapInput fullWidth placeholder="Email Address" />
                             </Box>
-
+                            {/* Suject Message input */}
                             <Box
                                 className={` ${classes.responseInput}`}
                                 mb={5}
@@ -133,8 +142,9 @@ const ContactUs = () => {
                                     maxWidth: '100%',
                                 }}
                             >
-                                <TextField fullWidth placeholder="Suject Message" className={classes.input} />
+                                <BootstrapInput fullWidth placeholder="Suject Message" />
                             </Box>
+                            {/* Your inquiry here input */}
                             <Box mb={2.5} display={'flex'} width="100%">
                                 <TextareaAutosize
                                     className={`${classes.contactInputBottom} ${classes.responseInput}`}
@@ -153,7 +163,7 @@ const ContactUs = () => {
                                     }}
                                 />
                             </Box>
-
+                            {/* button send message  */}
                             <CustomButton variant="contained" color="secondary">
                                 Send Message
                             </CustomButton>
