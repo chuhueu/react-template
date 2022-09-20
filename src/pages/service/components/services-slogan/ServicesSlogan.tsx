@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme: any) => ({
         width: '23%',
     },
     popPupVideo: {
-        zIndex: 10,
+        zIndex: 103,
         width: '80vw',
         height: '80vh',
         position: 'fixed',
@@ -103,6 +103,16 @@ const ServicesSlogan = () => {
     const classes = useStyles();
     return (
         <>
+            {showpopPupVideo && (
+                <Box className={classes.popPupVideo}>
+                    <Box className={classes.popPupVideoImg}>
+                        <VideoIframe />
+                        <Box className={classes.popPupVideoClose} onClick={() => setpopPupVideo(!showpopPupVideo)}>
+                            X
+                        </Box>
+                    </Box>
+                </Box>
+            )}
             <Box
                 component="section"
                 className={classes.servicesSlogan}
@@ -110,21 +120,9 @@ const ServicesSlogan = () => {
                 marginBottom={'112px'}
                 minHeight={'529px'}
             >
+                {/* PopPup Video  */}
+
                 <Box className={classes.servicesSloganBackground}>
-                    {/* PopPup Video  */}
-                    {showpopPupVideo && (
-                        <Box className={classes.popPupVideo}>
-                            <Box className={classes.popPupVideoImg}>
-                                <VideoIframe />
-                                <Box
-                                    className={classes.popPupVideoClose}
-                                    onClick={() => setpopPupVideo(!showpopPupVideo)}
-                                >
-                                    X
-                                </Box>
-                            </Box>
-                        </Box>
-                    )}
                     <Container maxWidth="lg">
                         <Box
                             display="flex"
