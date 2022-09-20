@@ -1,7 +1,6 @@
 import { Box, Typography, Grid } from '@mui/material';
 import { ImageList, ImageListItem, List, ListItemIcon } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 
 import { CustomButton } from 'components';
 import img1 from 'assets/images/gallery/1.png';
@@ -13,7 +12,8 @@ import img6 from 'assets/images/gallery/6.png';
 import img7 from 'assets/images/gallery/7.png';
 import img8 from 'assets/images/gallery/8.png';
 import img9 from 'assets/images/gallery/9.png';
-import './our-gallery.css';
+import imgBackground from 'assets/images/gallery/unsplash_eflLpWC1Geo.png';
+import PlayButton from 'assets/images/gallery/PlayButton.svg';
 
 const useStyles = makeStyles((theme: any) => ({
     responseTitleGallery: {
@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     responseDescription: {
+        '& strong': {
+            color: '#091156',
+        },
         [theme.breakpoints.down('md')]: {
             width: '100% !important',
         },
@@ -36,6 +39,22 @@ const useStyles = makeStyles((theme: any) => ({
             flexWrap: 'wrap !important',
         },
     },
+    listImgGallery: {
+        '&:hover': {
+            opacity: '0.5',
+            cursor: 'pointer',
+            transition: 'all ease 500ms',
+        },
+    },
+    galleryContainer: {
+        backgroundImage: `url(${imgBackground})`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        position: 'absolute',
+        left: '0',
+        right: '0',
+    },
 }));
 
 function OurGallery() {
@@ -43,9 +62,10 @@ function OurGallery() {
 
     return (
         <Box component="section">
+            {/* Start List Image Gallery */}
             <Box pt={10}>
                 <Typography variant="subtitle2">Our Gallery</Typography>
-                <Box mt={1.5} className={`gallery-title ${classes.responseTitleGallery}`} gap={2}>
+                <Box mt={1.5} display="flex" className={classes.responseTitleGallery} gap={2}>
                     <Typography variant="h3">Check out the collection pictures from our clinic</Typography>
                     <Typography variant="inherit">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
@@ -53,11 +73,11 @@ function OurGallery() {
                     </Typography>
                 </Box>
                 <Grid container item pt={9.8}>
-                    <Grid>
+                    <Grid sx={{ width: '100%' }}>
                         <ImageList cols={3}>
                             {itemData.map((item) => (
                                 <ImageListItem
-                                    className="list-img_gallery"
+                                    className={classes.listImgGallery}
                                     sx={{ paddingRight: '35px', paddingBottom: '35px' }}
                                     key={item.img}
                                 >
@@ -71,11 +91,7 @@ function OurGallery() {
                             ))}
                         </ImageList>
                     </Grid>
-                    <Grid
-                        className={`description-gallery-img ${classes.responseDescription}`}
-                        sx={{ width: '50%' }}
-                        pt={9}
-                    >
+                    <Grid className={classes.responseDescription} sx={{ width: '50%', fontSize: '16px' }} pt={9}>
                         <Typography variant="inherit">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
                             venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim,{' '}
@@ -84,33 +100,54 @@ function OurGallery() {
                     </Grid>
                 </Grid>
             </Box>
+            {/* End List Image Gallery */}
 
-            <Box component="section" className="gallery-container" mt={19.5} mb={16} height={725}>
-                <Box className="background-overlay">
+            {/* Start Image Background & Overlay  */}
+            <Box className={classes.galleryContainer} mt={19.5} mb={16} height={725}>
+                <Box
+                    sx={{
+                        height: '100%',
+                        background: '#091156',
+                        opacity: '0.6',
+                        position: 'absolute',
+                        left: '0',
+                        right: '0',
+                    }}
+                >
                     <Box textAlign="center" pt={23} maxWidth="1152px" ml="auto" mr="auto">
                         <Box>
                             <Typography variant="h3" mb={2.5} pl={0.5} pr={1.5} color="white" fontSize="36px">
                                 Watch the video tour
                             </Typography>
-                            <Typography variant="inherit">
+                            <Typography  color="white" variant="inherit">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet
                                 luctus venenatis
                             </Typography>
                         </Box>
-                        <Box>
+                        <Box pt={3}>
                             <List>
-                                <ListItemIcon className="icon-play-gallery">
-                                    <PlayCircleOutlineRoundedIcon />
+                                <ListItemIcon>
+                                    <img src={PlayButton} />
                                 </ListItemIcon>
                             </List>
                         </Box>
                     </Box>
                 </Box>
             </Box>
-            <Box pt={20}></Box>
+            <Box pt={25}></Box>
+            {/* End Image Background & Overlay */}
 
-            <Grid className={`touch_container ${classes.responseTouchContainer}`} container pt={100} pb={18} gap={2}>
-                <Grid item lg={7} md={12} className="title_touch">
+            {/* Start Touch Gallery */}
+            <Grid
+                alignItems="center"
+                flexWrap="nowrap"
+                className={classes.responseTouchContainer}
+                container
+                pt={100}
+                pb={18}
+                gap={2}
+            >
+                <Grid item lg={7} md={12}>
                     <Box mb={1.3}>
                         <Typography variant="subtitle2">Get In Touch</Typography>
                     </Box>
@@ -121,16 +158,18 @@ function OurGallery() {
                         Id dui erat sed quam tellus in purus. Pellentesque congue fringilla cras tellus enim.
                     </Typography>
                 </Grid>
-                <Grid item lg={5} md={12} className={`touch_btn ${classes.responseTouchBtn}`}>
+                <Grid item textAlign="center" lg={5} md={12} className={classes.responseTouchBtn}>
                     <CustomButton variant="contained" color="secondary">
                         Make an Appointment
                     </CustomButton>
                 </Grid>
             </Grid>
+            {/* End Touch Gallery */}
         </Box>
     );
 }
 
+// Date Image Gallery
 const itemData = [
     {
         img: img1,

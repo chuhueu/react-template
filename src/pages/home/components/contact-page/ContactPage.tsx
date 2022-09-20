@@ -101,6 +101,7 @@ function ContactPage() {
                                     fontSize: 14,
                                     borderRadius: 15,
                                     borderColor: '#d9ddfe',
+                                    outline: 'none',
                                 }}
                             />
                         </Box>
