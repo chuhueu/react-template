@@ -47,7 +47,7 @@ const Video = () => {
     const classes = useStyles();
     return (
         <>
-            <Box component="section">
+            <Box component="section" mt={21}>
                 <Typography variant="subtitle2" mb={2} textAlign="left" paddingTop="75px">
                     About
                 </Typography>
