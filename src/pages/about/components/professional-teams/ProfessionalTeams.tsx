@@ -65,6 +65,7 @@ const Slogan = () => {
                         </Box>
                     </Box>
                     <Grid container pt={12.5} textAlign="center" className={` ${classes.professionalContainer}`}>
+                        {/* box left  */}
                         <Grid item xs={0} sm={12} lg={4} md={4} className={` ${classes.professionalTeams}`}>
                             <Box>
                                 <img src={ProFessionalTeams1} alt="FessionalTeams1" />
@@ -88,7 +89,7 @@ const Slogan = () => {
                                 <CustomIcons />
                             </Box>
                         </Grid>
-
+                        {/* box center  */}
                         <Grid
                             item
                             xs={0}
@@ -119,7 +120,7 @@ const Slogan = () => {
                                 <CustomIcons />
                             </Box>
                         </Grid>
-
+                        {/* box right  */}
                         <Grid item xs={0} sm={12} lg={4} md={4} className={` ${classes.professionalTeams} `}>
                             <Box>
                                 <img src={ProFessionalTeams3} alt="FessionalTeams1" />
