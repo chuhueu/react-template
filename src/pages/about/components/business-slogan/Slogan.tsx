@@ -39,7 +39,7 @@ const Slogan = () => {
         <>
             <Box
                 component="section"
-                className={`${classes.businessslogan} businessslogan`}
+                className={`${classes.businessslogan} `}
                 marginTop={'150px'}
                 marginBottom={'112px'}
                 height={'529px'}
