@@ -1,4 +1,14 @@
-import { Box, List, ListItemText, ListItem, ListItemButton, Typography, ListItemIcon, Grid } from '@mui/material';
+import {
+    Box,
+    List,
+    ListItemText,
+    ListItem,
+    ListItemButton,
+    Typography,
+    ListItemIcon,
+    Grid,
+    Container,
+} from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { makeStyles } from '@mui/styles';
 import { Link, withRouter } from 'react-router-dom';
@@ -12,6 +22,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 import backgroundFooter from 'assets/images/home/Footer.png';
 import footerLogo from 'assets/images/home/FooterLogo.png';
+import { width } from '@mui/system';
 // import './footer-page.css';
 
 const useStyles = makeStyles((theme: any) => ({
@@ -19,11 +30,24 @@ const useStyles = makeStyles((theme: any) => ({
         [theme.breakpoints.down('md')]: {
             flexWrap: 'wrap',
         },
+        [theme.breakpoints.down('lg')]: {
+            width: '100% !important',
+        },
     },
-    responseRightFooter: {
+    responseIconsFooter: {
         [theme.breakpoints.down('md')]: {
             width: '100% !important',
-            paddingBottom: '20px',
+            flexDecoration: 'column !important',
+            textAlign: 'center',
+        },
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+        },
+    },
+    responseRightFooter: {
+        [theme.breakpoints.down('lg')]: {
+            width: '100% !important',
+
         },
     },
     backgroundFooter: {
@@ -58,160 +82,170 @@ const FooterPage = () => {
 
     return (
         <Box component="section" overflow="hidden" className={classes.backgroundFooter}>
-            <Grid container maxWidth={'1152px'} margin="0 auto" pt={31}>
-                <Grid
-                    item
-                    lg={12}
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    color="#fff"
-                    gap={2}
-                    className={classes.responseFooter}
-                >
-                    <Box>
-                        <Box mb={2.5}>
-                            <img src={footerLogo} alt="FooterLogo" />
-                        </Box>
-                        <Box mb={2.5}>
-                            <Typography>Beautice is a Beauty Clinic WordPress Theme.</Typography>
-                        </Box>
-                        <Typography>Baker Steet 101, NY, United States.</Typography>
-                        <List sx={[{ display: 'flex' }]}>
-                            <ListItemText className={classes.contactFooter}>+521 569 8966.</ListItemText>
-                            <ListItemText className={classes.contactFooter}>mail@company.com.</ListItemText>
-                        </List>
-                        <Box height="90px"></Box>
-                    </Box>
-                    <Box
-                        className={classes.responseRightFooter}
+            <Container maxWidth="lg">
+                <Grid container margin="0 auto" pt={31}>
+                    <Grid
+                        item
+                        lg={12}
                         display="flex"
-                        width="50%"
-                        justifyContent="space-around"
+                        justifyContent="center"
+                        alignItems="center"
+                        color="#fff"
+                        gap={2}
+                        className={classes.responseFooter}
                     >
                         <Box>
-                            <Box pl={2.3}>Pages</Box>
-                            <List>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <Link
-                                        to="/"
-                                        onClick={() => {
-                                            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                            <Box mb={2.5}>
+                                <img src={footerLogo} alt="FooterLogo" />
+                            </Box>
+                            <Box mb={2.5} pl={4}>
+                                <Typography sx={{ paddingBottom: '16px' }}>
+                                    Beautice is a Beauty Clinic WordPress Theme.
+                                </Typography>
+                                <Typography>Baker Steet 101, NY, United States.</Typography>
+                                <List sx={[{ display: 'flex' }]}>
+                                    <ListItemText className={classes.contactFooter}>+521 569 8966.</ListItemText>
+                                    <ListItemText
+                                        sx={[{ textDecoration: 'underline' }]}
+                                        className={classes.contactFooter}
                                     >
-                                        Home
-                                    </Link>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <Link
-                                        to="/about"
-                                        onClick={() => {
-                                            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
-                                    >
-                                        About
-                                    </Link>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <Link
-                                        to="/service"
-                                        onClick={() => {
-                                            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
-                                    >
-                                        Service
-                                    </Link>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <Link
-                                        to="/gallery"
-                                        onClick={() => {
-                                            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
-                                    >
-                                        Gallery
-                                    </Link>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <Link
-                                        to="/"
-                                        onClick={() => {
-                                            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                                        }}
-                                        style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
-                                    >
-                                        Team
-                                    </Link>
-                                </ListItem>
+                                        mail@company.com.
+                                    </ListItemText>
+                                </List>
+                            </Box>
+                            <Box height="90px"></Box>
+                        </Box>
+                        <Box
+                            className={classes.responseRightFooter}
+                            display="flex"
+                            width="50%"
+                            justifyContent="space-around"
+                        >
+                            <Box>
+                                <Box pl={2.3}>Pages</Box>
+                                <List>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <Link
+                                            to="/"
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                                        >
+                                            Home
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <Link
+                                            to="/about"
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                                        >
+                                            About
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <Link
+                                            to="/service"
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                                        >
+                                            Service
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <Link
+                                            to="/gallery"
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                                        >
+                                            Gallery
+                                        </Link>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <Link
+                                            to="/"
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                            }}
+                                            style={{ color: '#fff', textDecoration: 'none', padding: '8px 16px' }}
+                                        >
+                                            Team
+                                        </Link>
+                                    </ListItem>
+                                </List>
+                            </Box>
+                            <Box>
+                                <Box pl={2.3}>Informations</Box>
+                                <List>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <ListItemButton>Terms & conditions</ListItemButton>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <ListItemButton>Privacy policy</ListItemButton>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <ListItemButton>Blog</ListItemButton>
+                                    </ListItem>
+                                    <ListItem className={classes.listPages}>
+                                        <ArrowRightIcon />
+                                        <ListItemButton>Contact</ListItemButton>
+                                    </ListItem>
+                                </List>
+                            </Box>
+                        </Box>
+                    </Grid>
+                    <Grid
+                        item
+                        lg={12}
+                        // display="flex"
+                        color="#fff"
+                        justifyContent="space-between"
+                        alignItems="center"
+                        pb={14}
+                        className={classes.responseIconsFooter}
+                    >
+                        <Box>
+                            <List sx={[{ padding: '0' }]}>
+                                <ListItemIcon sx={[{ color: '#fff' }]} className={classes.iconsSection}>
+                                    <ListItemButton>
+                                        <FacebookIcon fontSize="large" />
+                                    </ListItemButton>
+                                    <ListItemButton>
+                                        <TwitterIcon fontSize="large" />
+                                    </ListItemButton>
+                                    <ListItemButton>
+                                        <LinkedInIcon fontSize="large" />
+                                    </ListItemButton>
+                                    <ListItemButton>
+                                        <YouTubeIcon fontSize="large" />
+                                    </ListItemButton>
+                                    <ListItemButton>
+                                        <InstagramIcon fontSize="large" />
+                                    </ListItemButton>
+                                </ListItemIcon>
                             </List>
                         </Box>
                         <Box>
-                            <Box pl={2.3}>Informations</Box>
-                            <List>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <ListItemButton>Terms & conditions</ListItemButton>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <ListItemButton>Privacy policy</ListItemButton>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <ListItemButton>Blog</ListItemButton>
-                                </ListItem>
-                                <ListItem className={classes.listPages}>
-                                    <ArrowRightIcon />
-                                    <ListItemButton>Contact</ListItemButton>
-                                </ListItem>
-                            </List>
+                            <Typography>© AltDesain Studio 2021 – All right reserved.</Typography>
                         </Box>
-                    </Box>
+                    </Grid>
                 </Grid>
-                <Grid
-                    item
-                    lg={12}
-                    display="flex"
-                    color="#fff"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    pb={14}
-                >
-                    <Box>
-                        <List sx={[{ padding: '0' }]}>
-                            <ListItemIcon sx={[{ color: '#fff' }]} className={classes.iconsSection}>
-                                <ListItemButton>
-                                    <FacebookIcon fontSize="large" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <TwitterIcon fontSize="large" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <LinkedInIcon fontSize="large" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <YouTubeIcon fontSize="large" />
-                                </ListItemButton>
-                                <ListItemButton>
-                                    <InstagramIcon fontSize="large" />
-                                </ListItemButton>
-                            </ListItemIcon>
-                        </List>
-                    </Box>
-                    <Box>
-                        <Typography>© AltDesain Studio 2021 – All right reserved.</Typography>
-                    </Box>
-                </Grid>
-            </Grid>
+            </Container>
         </Box>
     );
 };
