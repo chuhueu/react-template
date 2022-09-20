@@ -40,6 +40,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
         border: '1px solid #d9ddfe',
         fontSize: 16,
         padding: '15px 12px',
+        background: '#fff',
     },
 }));
 
@@ -73,6 +74,7 @@ function ContactPage() {
                         Lorem ipsum dolor sit amet nulla turapis tellus.
                     </Typography>
 
+                    {/* Form input */}
                     <Box>
                         <Box className={classes.responseInput} mb={5} gap={2} display={'flex'}>
                             <BootstrapInput fullWidth placeholder="First Name" />
