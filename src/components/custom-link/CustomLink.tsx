@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         },
     },
 });
-  
+
 
 const CustomLink = ({ label, to, activeOnlyWhenExact }: any) => {
     const classes = useStyles();
@@ -27,6 +27,7 @@ const CustomLink = ({ label, to, activeOnlyWhenExact }: any) => {
                 className={classes.customLink}
                 style={{color: routeActive ? '#414880' : '#8B8B8B'}}>
                 {label} {routeActive ? <AddIcon fontSize="inherit"/> : ''}
+                
             </Link>
         </Box>
     );
