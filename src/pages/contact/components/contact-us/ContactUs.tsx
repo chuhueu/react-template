@@ -71,7 +71,7 @@ const ContactUs = () => {
     const classes = useStyles();
     return (
         <>
-            <Box component="section" pt={12.5} pb={19}>
+            <Box component="section" pt={12.5} pb={19} mt={21}>
                 <img src={Bubble1} alt="BackgroundContact" className={classes.imgBackgroundContact} />
                 <Grid
                     container

@@ -24,7 +24,7 @@ function LandingPage() {
     const classes = useStyles();
 
     return (
-        <Box component="section">
+        <Box component="section" mt={21}>
             <img src={backgroundSideLarge} alt="background" className="background-image" />
             <Grid className={`landing-page ${classes.landingText}`} gap={2}>
                 <Grid>

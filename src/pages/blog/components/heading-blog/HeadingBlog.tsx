@@ -32,7 +32,7 @@ function HeadingBlog() {
     return (
         <>
             {/* Start Blog Header Img */}
-            <Box component="section">
+            <Box component="section" mt={21}>
                 <Box>
                     <Box className={classes.BackgroundBlog}>
                         <Box className={classes.backgroundBlogOverlay}></Box>

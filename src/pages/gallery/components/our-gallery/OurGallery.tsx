@@ -61,7 +61,7 @@ function OurGallery() {
     const classes = useStyles();
 
     return (
-        <Box component="section">
+        <Box component="section" mt={21}>
             {/* Start List Image Gallery */}
             <Box pt={10}>
                 <Typography variant="subtitle2">Our Gallery</Typography>
@@ -119,7 +119,7 @@ function OurGallery() {
                             <Typography variant="h3" mb={2.5} pl={0.5} pr={1.5} color="white" fontSize="36px">
                                 Watch the video tour
                             </Typography>
-                            <Typography  color="white" variant="inherit">
+                            <Typography color="white" variant="inherit">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet
                                 luctus venenatis
                             </Typography>

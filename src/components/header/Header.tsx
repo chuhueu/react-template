@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Box, BoxProps, Grid } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Box, BoxProps, Grid, Container } from '@mui/material';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { makeStyles } from '@mui/styles';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
@@ -47,6 +47,17 @@ const useStyles = makeStyles((theme: any) => ({
         [theme.breakpoints.down('md')]: {
             display: 'block !important',
         },
+    },
+    headerFix: {
+        background: 'rgba(255, 255, 255, 0.97)',
+        boxShadow: ' 10px 13px 80px 14px rgb(242 244 255 / 95%)',
+    },
+    headerFixTop: {
+        zIndex: '101',
+        position: 'fixed',
+        left: 0,
+        right: 0,
+        top: 0,
     },
 }));
 
@@ -114,84 +125,104 @@ const Header = () => {
     const navigateToContact = () => {
         history.push('/contact');
     };
+    const [showClassHeader, setClassHeader] = useState(false);
+    useEffect(() => {
+        const handleEvenScroll = () => {
+            if (window.scrollY >= 1) {
+                setClassHeader(true);
+                return;
+            }
+            setClassHeader(false);
+        };
+        window.addEventListener('scroll', handleEvenScroll);
+    });
+
     return (
         <>
-            <Box
-                sx={{
-                    padding: '40px',
-                    top: '10px',
-                    zIndex: 1,
-                    width: '100%',
-                }}
-            >
-                <Box
-                    sx={{
-                        marginTop: '25px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Box>
-                        <img src={logo} alt="logo" />
-                    </Box>
-                    <Box
-                        className={classes.handleHeader}
-                        sx={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            alignContent: 'flex-start',
-                        }}
-                    >
-                        {listItems}
-                    </Box>
+            <Box className={`${classes.headerFixTop} ${showClassHeader ? classes.headerFix : ''}`}>
+                <Container maxWidth="lg">
                     <Box
                         sx={{
-                            display: 'flex',
-                            alignItems: 'center',
+                            padding: '40px',
+                            top: '10px',
+                            zIndex: 1,
+                            width: '100%',
                         }}
                     >
                         <Box
-                            className={classes.handleIcon}
-                            // mr={5}
                             sx={{
-                                display: 'none',
+                                marginTop: '25px',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
                             }}
                         >
-                            <Drawer className={classes.responseDrawer} open={open} onClose={() => setOpen(false)}>
-                                <List>
-                                    <ListItemButton className="menu-list-items">
-                                        <ListItemIcon className="list-menu">
-                                            <img src={logo} alt=" logo" />
-                                            <ListItemText className="items-menu"> {listItems} </ListItemText>
-                                            <ListItemIcon className={classes.displayNoneButtonMobile}>
-                                                <CustomButton
-                                                    variant="contained"
-                                                    color="secondary"
-                                                    onClick={navigateToContact}
-                                                >
-                                                    Contact
-                                                </CustomButton>
-                                            </ListItemIcon>
-                                        </ListItemIcon>
-                                    </ListItemButton>
-                                </List>
-                            </Drawer>
-                            <IconButton
-                                sx={{ marginLeft: 'auto' }}
-                                onClick={() => setOpen(true)}
-                                className="font-size-icon-nav-mobile"
+                            <Box>
+                                <img src={logo} alt="logo" />
+                            </Box>
+                            <Box
+                                className={classes.handleHeader}
+                                sx={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    alignContent: 'flex-start',
+                                }}
                             >
-                                <MenuSharpIcon />
-                            </IconButton>
-                        </Box>
-                        <Box className={classes.displayButtonMobile}>
-                            <CustomButton variant="contained" color="secondary" onClick={navigateToContact}>
-                                Contact
-                            </CustomButton>
+                                {listItems}
+                            </Box>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <Box
+                                    className={classes.handleIcon}
+                                    // mr={5}
+                                    sx={{
+                                        display: 'none',
+                                    }}
+                                >
+                                    <Drawer
+                                        className={classes.responseDrawer}
+                                        open={open}
+                                        onClose={() => setOpen(false)}
+                                    >
+                                        <List>
+                                            <ListItemButton className="menu-list-items">
+                                                <ListItemIcon className="list-menu">
+                                                    <img src={logo} alt=" logo" />
+                                                    <ListItemText className="items-menu"> {listItems} </ListItemText>
+                                                    <ListItemIcon className={classes.displayNoneButtonMobile}>
+                                                        <CustomButton
+                                                            variant="contained"
+                                                            color="secondary"
+                                                            onClick={navigateToContact}
+                                                        >
+                                                            Contact
+                                                        </CustomButton>
+                                                    </ListItemIcon>
+                                                </ListItemIcon>
+                                            </ListItemButton>
+                                        </List>
+                                    </Drawer>
+                                    <IconButton
+                                        sx={{ marginLeft: 'auto' }}
+                                        onClick={() => setOpen(true)}
+                                        className="font-size-icon-nav-mobile"
+                                    >
+                                        <MenuSharpIcon />
+                                    </IconButton>
+                                </Box>
+                                <Box className={classes.displayButtonMobile}>
+                                    <CustomButton variant="contained" color="secondary" onClick={navigateToContact}>
+                                        Contact
+                                    </CustomButton>
+                                </Box>
+                            </Box>
                         </Box>
                     </Box>
-                </Box>
+                </Container>
             </Box>
         </>
     );

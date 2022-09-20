@@ -49,7 +49,7 @@ export default function ServicesImageList() {
         <>
             <img src={BG5} alt="treatment" className={` ${classes.displayListBackground} ${classes.img}`} />
             {/* header list img  */}
-            <Typography variant="subtitle2" mb={2} textAlign="center" paddingTop="100px">
+            <Typography variant="subtitle2" mb={2} textAlign="center" paddingTop="100px" mt={21}>
                 Our Services
             </Typography>
             <Typography variant="h3" textAlign="center">
