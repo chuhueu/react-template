@@ -42,7 +42,7 @@ function ServicePage() {
                 </Box>
             </Box>
 
-            <Grid container spacing={8} pt={11.5} alignItems="center" justifyContent="center" width="100%">
+            <Grid container spacing={8} pt={11.5} alignItems="center" justifyContent="center">
                 <Grid item xs={0} sm={12} lg={4} md={6}>
                     <Box className={classes.responseServiceItem}>
                         <Box textAlign="center">
