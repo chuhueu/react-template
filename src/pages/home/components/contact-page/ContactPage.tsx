@@ -1,9 +1,9 @@
 import { Box, Typography, Grid } from '@mui/material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
-import TextField from '@mui/material/TextField';
 import { makeStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 
-import './contact-page.css';
 import ContactImg from 'assets/images/home/contact.png';
 import ContactBackgroundImg from 'assets/images/home/BG-2.png';
 import { CustomButton } from 'components';
@@ -15,9 +15,31 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     responseInput: {
+        width: 450,
+        maxWidth: '100%',
         [theme.breakpoints.down('md')]: {
             width: '100% !important',
         },
+    },
+    imgBackgroundContact: {
+        position: 'absolute',
+        left: '0',
+        top: '2750px',
+        zIndex: '-1',
+    },
+    responseService: {
+        [theme.breakpoints.down('md')]: {
+            paddingTop: ' 0 !important',
+        },
+    },
+}));
+
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+    '& .MuiInputBase-input': {
+        borderRadius: 15,
+        border: '1px solid #d9ddfe',
+        fontSize: 16,
+        padding: '15px 12px',
     },
 }));
 
@@ -25,9 +47,18 @@ function ContactPage() {
     const classes = useStyles();
 
     return (
-        <Box component="section" pt={12.5} pb ={19}>
-            <img src={ContactBackgroundImg} alt="BackgroundContact" className="imgBackgroundContact" />
-            <Grid container className={`contact-container ${classes.responseImg}`} gap={2}>
+        <Box component="section" className={classes.responseService} pt={12.5} pb={19}>
+            <img src={ContactBackgroundImg} alt="BackgroundContact" className={classes.imgBackgroundContact} />
+            <Grid
+                sx={{
+                    position: 'relative',
+                    flexWrap: 'nowrap',
+                    justifyContent: 'center',
+                }}
+                container
+                className={classes.responseImg}
+                gap={2}
+            >
                 <Grid item md={12}>
                     <img src={ContactImg} alt="ContactImg" />
                 </Grid>
@@ -43,49 +74,26 @@ function ContactPage() {
                     </Typography>
 
                     <Box>
-                        <Box
-                            className={`contact-input ${classes.responseInput}`}
-                            mb={5}
-                            gap={2}
-                            sx={{
-                                width: 450,
-                                maxWidth: '100%',
-                            }}
-                        >
-                            <TextField fullWidth placeholder="First Name" />
+                        <Box className={classes.responseInput} mb={5} gap={2} display={'flex'}>
+                            <BootstrapInput fullWidth placeholder="First Name" />
 
-                            <TextField fullWidth placeholder="Last Name" />
+                            <BootstrapInput fullWidth placeholder="Last Name" />
                         </Box>
 
-                        <Box
-                            className={classes.responseInput}
-                            mb={5}
-                            sx={{
-                                width: 450,
-                                maxWidth: '100%',
-                            }}
-                        >
-                            <TextField fullWidth placeholder="Email Address" />
+                        <Box className={classes.responseInput} mb={5}>
+                            <BootstrapInput fullWidth placeholder="Email Address" />
                         </Box>
 
-                        <Box
-                            className={classes.responseInput}
-                            mb={5}
-                            sx={{
-                                width: 450,
-                                maxWidth: '100%',
-                            }}
-                        >
-                            <TextField fullWidth placeholder="Suject Message" />
+                        <Box className={classes.responseInput} mb={5}>
+                            <BootstrapInput fullWidth placeholder="Subject Message" />
                         </Box>
                         <Box mb={2.5}>
                             <TextareaAutosize
-                            className={classes.responseInput}
+                                className={classes.responseInput}
                                 maxRows={4}
                                 aria-label="Your inquiry here"
                                 placeholder="Your inquiry here"
                                 style={{
-                                    width: 450,
                                     height: 230,
                                     paddingTop: 15,
                                     paddingLeft: 25,

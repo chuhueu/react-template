@@ -6,7 +6,6 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-import './custom-icons.css'
 
 const useStyles = makeStyles((theme: any) => ({
     responseIcon: {
