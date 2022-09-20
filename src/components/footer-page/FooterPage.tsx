@@ -79,7 +79,7 @@ const FooterPage = () => {
                         <Typography>Baker Steet 101, NY, United States.</Typography>
                         <List sx={[{ display: 'flex' }]}>
                             <ListItemText className={classes.contactFooter}>+521 569 8966.</ListItemText>
-                            <ListItemText className={classes.contactFooter}>mail@company.com.</ListItemText>
+                            <ListItemText sx={[{textDecoration:'underline'}]} className={classes.contactFooter}>mail@company.com.</ListItemText>
                         </List>
                         <Box height="90px"></Box>
                     </Box>
