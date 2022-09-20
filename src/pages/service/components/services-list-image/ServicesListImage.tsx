@@ -48,6 +48,7 @@ export default function ServicesImageList() {
     return (
         <>
             <img src={BG5} alt="treatment" className={` ${classes.displayListBackground} ${classes.img}`} />
+            {/* header list img  */}
             <Typography variant="subtitle2" mb={2} textAlign="center" paddingTop="100px">
                 Our Services
             </Typography>
@@ -82,7 +83,7 @@ export default function ServicesImageList() {
         </>
     );
 }
-
+// list data image
 const itemData = [
     {
         img: imgOurServices1,

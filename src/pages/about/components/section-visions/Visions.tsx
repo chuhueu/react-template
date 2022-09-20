@@ -38,17 +38,10 @@ function Vision() {
         <Box>
             <Box component="section" mt={100}>
                 <Grid className={`${classes.landingPageAbout}`} container>
-                    <Grid
-                        item
-                        // className="section-vision-img"
-                        xs={12}
-                        lg={5}
-                        md={12}
-                        sm={12}
-                        className={`${classes.customLink}`}
-                    >
+                    <Grid item xs={12} lg={5} md={12} sm={12} className={`${classes.customLink}`}>
                         <img src={Illustration} alt="treatment" className={`${classes.sectionVisionImg}`} />
                     </Grid>
+                    {/*Box Our Vision  */}
                     <Grid item xs={12} lg={5} md={12} sm={12}>
                         <Typography variant="subtitle2" mb={2} paddingTop="0">
                             Our Vision
@@ -67,8 +60,7 @@ function Vision() {
                     </Grid>
                 </Grid>
 
-                {/* Our Mission  */}
-
+                {/*Box Our Mission  */}
                 <Grid container className={`${classes.landingPageAbout}`} mt={18}>
                     <Grid item xs={12} lg={5} md={12} sm={12}>
                         <Typography variant="subtitle2" mb={2} textAlign="left" paddingTop="0" fontSize="16px">

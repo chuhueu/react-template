@@ -111,6 +111,7 @@ const ServicesSlogan = () => {
                 minHeight={'529px'}
             >
                 <Box className={classes.servicesSloganBackground}>
+                    {/* PopPup Video  */}
                     {showpopPupVideo && (
                         <Box className={classes.popPupVideo}>
                             <Box className={classes.popPupVideoImg}>
@@ -152,6 +153,7 @@ const ServicesSlogan = () => {
                             </Box>
                             <Box width="49.5%" ml={18} className={`${classes.serviceCustomersItemLeft}`}>
                                 <Box display="flex" alignItems={'center'}>
+                                    {/* icon play video  */}
                                     <Box
                                         className={classes.ServicesSloganIconPlay}
                                         color="white"
@@ -159,6 +161,7 @@ const ServicesSlogan = () => {
                                     >
                                         <SvgPlay />
                                     </Box>
+                                    {/* Treatments Videos  */}
                                     <Box ml={10} className={`${classes.serviceCustomersItemLeftContent}`}>
                                         <Typography
                                             variant="h6"
