@@ -47,7 +47,6 @@ const useStyles = makeStyles((theme: any) => ({
     responseRightFooter: {
         [theme.breakpoints.down('lg')]: {
             width: '100% !important',
-
         },
     },
     backgroundFooter: {
@@ -175,7 +174,7 @@ const FooterPage = () => {
                                     <ListItem className={classes.listPages}>
                                         <ArrowRightIcon />
                                         <Link
-                                            to="/"
+                                            to="/teams"
                                             onClick={() => {
                                                 window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                                             }}

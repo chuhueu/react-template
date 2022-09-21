@@ -26,7 +26,7 @@ function GetInTouch() {
     const classes = useStyles();
 
     return (
-        <Box component="section" pt={12.5} pb={12.5}>
+        <Box component="section" pt={11.6} pb={12.5}>
             <Box>
                 <Typography variant="subtitle2" textAlign="center" mb={2}>
                     Get in Touch
