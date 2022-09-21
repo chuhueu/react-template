@@ -71,7 +71,7 @@ const ContactUs = () => {
     const classes = useStyles();
     return (
         <>
-            <Box component="section" pt={12.5} pb={19} mt={21}>
+            <Box component="section" pt={12.5} pb={14} mt={21}>
                 <img src={Bubble1} alt="BackgroundContact" className={classes.imgBackgroundContact} />
                 <Grid
                     container
@@ -95,9 +95,10 @@ const ContactUs = () => {
                             variant="inherit"
                             mb={2.5}
                             pt={4}
-                            pb={6}
-                            pl={22}
+                            pb={7}
+                            pl={20}
                             pr={2}
+                            lineHeight="24px"
                             className={`${classes.PaddingInput}`}
                         >
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
@@ -111,7 +112,7 @@ const ContactUs = () => {
                                 mb={5}
                                 display={'flex'}
                                 width="100%"
-                                gap={2}
+                                gap={4}
                                 sx={{
                                     maxWidth: '100%',
                                 }}
@@ -145,7 +146,7 @@ const ContactUs = () => {
                                 <BootstrapInput fullWidth placeholder="Suject Message" />
                             </Box>
                             {/* Your inquiry here input */}
-                            <Box mb={2.5} display={'flex'} width="100%">
+                            <Box mb={7} display={'flex'} width="100%">
                                 <TextareaAutosize
                                     className={`${classes.contactInputBottom} ${classes.responseInput}`}
                                     maxRows={4}
